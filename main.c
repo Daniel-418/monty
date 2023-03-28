@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -89,7 +89,7 @@ char *get_opcode(char *line, unsigned int line_number)
 	if (command != NULL && strcmp(command, "push") == 0)
 	{
 		argument = strtok(NULL, " \t\n");
-		if (is_string_digit(strdup(argument)) == 1 && argument != NULL)
+		if (argument != NULL && is_string_digit(strdup(argument)) == 1) 
 			global.value = atoi(argument);
 		else
 		{

@@ -53,10 +53,15 @@ void pall(stack_t **stack, unsigned int line_number)
 	temp = *stack;
 	if (*stack != NULL)
 	{
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+
 		while (temp != NULL)
 		{
 			printf("%d\n", temp->n);
-			temp = temp->next;
+			temp = temp->prev;
 		}
 	}
 	line_number = line_number;
